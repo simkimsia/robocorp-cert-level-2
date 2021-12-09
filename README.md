@@ -24,4 +24,17 @@ Push the code.
 Canonical Git Commit: 451169a2cedf30c284ae3b7e8e16bf33041ac288
 Canonical URL in robocorp docs: https://robocorp.com/docs/courses/build-a-robot#option-a-visual-studio-code
 
-### Step 3:
+### Step 3: Run the Robot
+
+<kbd>⌘</kbd>+<kbd>P</kbd> > Robocorp: Run Robot
+
+Then study the log
+
+Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#4-run-the-template-robot
+
+### Step 4: Update robot description
+
+Update documentation with description
+
+Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#6-update-the-robot-description
+Canonical Git commit:
