@@ -16,5 +16,10 @@ testrun/*
 .~lock*
 *.pkl
 
+# downloads folder
 !downloads/default
 downloads/*.csv
+
+# other output related xml files
+output.xml
+*_freeze.yaml

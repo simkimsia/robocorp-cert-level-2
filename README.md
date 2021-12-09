@@ -52,3 +52,10 @@ Comment out everything except the open robot order website
 
 Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#8-open-the-robot-order-website
 Commit: aa1bae473f72e51e4498085b073715dad6b7fced
+
+### Step 7: Download csv file
+
+Download the csv file under downloads folder and return
+
+Canonical url: https://robocorp.com/docs/courses/build-a-robot#9-download-the-orders-file-read-it-as-a-table-and-return-the-result
+Canonical commit: 8134e2dd5b0573111c2ad066880aff2bf1a8eff3
