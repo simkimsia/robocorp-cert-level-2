@@ -37,4 +37,12 @@ Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#4-run-th
 Update documentation with description
 
 Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#6-update-the-robot-description
-Canonical Git commit:
+Canonical Git commit: 03ac8cd62d62c875f9a45a016b71a6a0c4745bea
+
+### Step 5: Update task name
+
+Update task name and include the overall structure
+
+Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#7-update-the-name-of-the-task
+Canonical Git commit: 03ac8cd62d62c875f9a45a016b71a6a0c4745bea
+
