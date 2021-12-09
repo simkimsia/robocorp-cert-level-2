@@ -16,7 +16,7 @@ Order robots from RobotSpareBin Industries Inc
     ${orders}=    Get orders from csv file
     FOR    ${row}    IN    @{orders}
         LOG    Show order number in row: ${row}[Order number]
-        # Close the annoying modal
+        Close the annoying modal
         # Fill the form    ${row}
         # Preview the robot
         # Submit the order
@@ -35,3 +35,6 @@ Get orders from csv file
     Download    https://robotsparebinindustries.com/orders.csv    overwrite=True    target_file=downloads/orders.csv
     ${table}=    Read table from CSV    downloads/orders.csv
     [Return]    ${table}
+
+Close the annoying modal
+    Click Element If Visible    //div[@class="modal-body"]//div[@class="alert-buttons"]//button[text()="OK"]
