@@ -4,13 +4,16 @@ Documentation     Orders robots from RobotSpareBin Industries Inc.
 ...               Saves the screenshot of the ordered robot.
 ...               Embeds the screenshot of the robot to the PDF receipt.
 ...               Creates ZIP archive of the receipts and the images.
-Library           RPA.Browser.Selenium    auto_close=${FALSE}
+Library    RPA.Browser.Selenium    auto_close=${FALSE}
+Library    RPA.HTTP
+Library    RPA.Tables
+
 
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
     Open the robot order website
-    # ${orders}=    Get orders
+    ${orders}=    Get orders from csv file
     # FOR    ${row}    IN    @{orders}
     #     Close the annoying modal
     #     Fill the form    ${row}
@@ -26,3 +29,8 @@ Order robots from RobotSpareBin Industries Inc
 *** Keywords ***
 Open the robot order website
     Open Available Browser    https://robotsparebinindustries.com/#/robot-order
+
+Get orders from csv file
+    Download    https://robotsparebinindustries.com/orders.csv    overwrite=True    target_file=downloads/orders.csv
+    ${table}=    Read table from CSV    downloads/orders.csv
+    [Return]    ${table}
