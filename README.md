@@ -46,3 +46,9 @@ Update task name and include the overall structure
 Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#7-update-the-name-of-the-task
 Canonical Git commit: 03ac8cd62d62c875f9a45a016b71a6a0c4745bea
 
+### Step 6: Open robot order website
+
+Comment out everything except the open robot order website
+
+Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#8-open-the-robot-order-website
+Commit: aa1bae473f72e51e4498085b073715dad6b7fced
