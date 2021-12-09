@@ -53,9 +53,23 @@ Comment out everything except the open robot order website
 Canonical robocorp url: https://robocorp.com/docs/courses/build-a-robot#8-open-the-robot-order-website
 Commit: aa1bae473f72e51e4498085b073715dad6b7fced
 
-### Step 7: Download csv file
+### Step 7: Download csv file and return table
 
-Download the csv file under downloads folder and return
+Download the csv file under downloads folder and return a table
 
 Canonical url: https://robocorp.com/docs/courses/build-a-robot#9-download-the-orders-file-read-it-as-a-table-and-return-the-result
 Canonical commit: 8134e2dd5b0573111c2ad066880aff2bf1a8eff3
+
+### Step 8: Loop the orders in table from csv file
+
+Loop thru the table and log the order number from each row
+
+Canonical url:  https://robocorp.com/docs/courses/build-a-robot#10-loop-the-orders
+Canonical commit: aa56fcd4eaaea2793b0c97d1ca1e2205db8271d3
+
+### Step 9: Close the modal about the give up constitutional rights
+
+Using xpath to target the button by looking inside the modal-body inside alert-buttons with text as OK and only if it's visible
+
+Canonical url: https://robocorp.com/docs/courses/build-a-robot#11-give-up-all-your-constitutional-rights
+Canonical commit: 633ffdc229d2a77830fbe21a99bc10d362a6dc55
