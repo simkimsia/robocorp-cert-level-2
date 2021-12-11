@@ -18,7 +18,7 @@ Order robots from RobotSpareBin Industries Inc
         LOG    Show order number in row: ${row}[Order number]
         Close the annoying modal
         Fill the form    ${row}
-        # Preview the robot
+        Preview the robot
         # Submit the order
         # ${pdf}=    Store the receipt as a PDF file    ${row}[Order number]
         # ${screenshot}=    Take a screenshot of the robot    ${row}[Order number]
@@ -45,3 +45,6 @@ Fill the form
     Select Radio Button    body    ${data_row}[Body]
     Input Text    //input[@type="number"]    ${data_row}[Legs]
     Input Text    address    ${data_row}[Address]
+
+Preview the robot
+    Click Button    id:preview
