@@ -17,7 +17,7 @@ Order robots from RobotSpareBin Industries Inc
     FOR    ${row}    IN    @{orders}
         LOG    Show order number in row: ${row}[Order number]
         Close the annoying modal
-        # Fill the form    ${row}
+        Fill the form    ${row}
         # Preview the robot
         # Submit the order
         # ${pdf}=    Store the receipt as a PDF file    ${row}[Order number]
@@ -38,3 +38,10 @@ Get orders from csv file
 
 Close the annoying modal
     Click Element If Visible    //div[@class="modal-body"]//div[@class="alert-buttons"]//button[text()="OK"]
+
+Fill the form
+    [Arguments]    ${data_row}
+    Select From List By Value    head    ${data_row}[Head]
+    Select Radio Button    body    ${data_row}[Body]
+    Input Text    //input[@type="number"]    ${data_row}[Legs]
+    Input Text    address    ${data_row}[Address]
