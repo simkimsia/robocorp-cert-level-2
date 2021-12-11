@@ -73,3 +73,10 @@ Using xpath to target the button by looking inside the modal-body inside alert-b
 
 - Canonical url: https://robocorp.com/docs/courses/build-a-robot#11-give-up-all-your-constitutional-rights
 - Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/633ffdc229d2a77830fbe21a99bc10d362a6dc55
+
+### Step 10: Fill up the form
+
+Fill up the form but without submission
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#12-fill-the-form
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/6b433801515c80a856fa2ffc2eb952200eaf88d9
