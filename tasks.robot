@@ -9,6 +9,9 @@ Library    RPA.HTTP
 Library    RPA.Tables
 
 
+*** Variables ***
+${GLOBAL_RETRY_AMOUNT}=    10x
+${GLOBAL_RETRY_INTERVAL}=    0.5s
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
@@ -19,7 +22,7 @@ Order robots from RobotSpareBin Industries Inc
         Close the annoying modal
         Fill the form    ${row}
         Preview the robot
-        # Submit the order
+        Submit the order
         # ${pdf}=    Store the receipt as a PDF file    ${row}[Order number]
         # ${screenshot}=    Take a screenshot of the robot    ${row}[Order number]
         # Embed the robot screenshot to the receipt PDF file    ${screenshot}    ${pdf}
@@ -48,3 +51,14 @@ Fill the form
 
 Preview the robot
     Click Button    id:preview
+
+Submit the order
+    Wait Until Keyword Succeeds    ${GLOBAL_RETRY_AMOUNT}    ${GLOBAL_RETRY_INTERVAL}    Submit Order and Assert for Receipt
+    Click Button When Visible    id:order-another
+
+Submit Order and Assert for Receipt
+    Click Button    id:order
+    Assert Page has Receipt
+
+Assert Page has Receipt
+    Page Should Contain Element    id:order-completion
