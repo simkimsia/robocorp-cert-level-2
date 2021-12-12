@@ -94,3 +94,25 @@ Submit and retry until works
 
 - Canonical url: https://robocorp.com/docs/courses/build-a-robot#14-submit-the-order
 - Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/068d498db5e45621a0c63e49c5ecc0f22bbd1ee2
+
+### Step 13: Store Receipt as PDF
+
+Store Receipt as PDF
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#15-store-the-order-receipt-as-a-pdf-file
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/03544ca6397f748d81445898894d548c7d7852e8
+
+### Step 14: Take screenshot of robot preview image
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#16-take-a-screenshot-of-the-robot-image
+
+### Step 15: Embed screenshot to pdf
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#17-embed-the-robot-screenshot-to-the-receipt-pdf-file
+
+### Step 16: Order another robot
+
+Order another robot
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#18-go-to-order-another-robot
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/03544ca6397f748d81445898894d548c7d7852e8
