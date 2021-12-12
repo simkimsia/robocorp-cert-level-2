@@ -124,3 +124,17 @@ Create a zip file
 
 - Canonical url: https://robocorp.com/docs/courses/build-a-robot#19-create-a-zip-file-of-the-receipts
 - Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/2e69f59d37ba5fab18272b42a49b02abc535c6c5
+
+### Step 18: Run as assistant
+
+Run as assistant
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#20-configure-and-run-the-robot-as-an-assistant-that-asks-for-user-input
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/2e63fb7b3cbc627e35eab9ebcc9a5b52565d4b6d
+
+### Step 19: Read the vault
+
+Read the vault
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#21-read-some-data-from-a-vault
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/2e63fb7b3cbc627e35eab9ebcc9a5b52565d4b6d
