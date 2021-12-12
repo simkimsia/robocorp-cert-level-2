@@ -5,10 +5,12 @@ Documentation     Orders robots from RobotSpareBin Industries Inc.
 ...               Embeds the screenshot of the robot to the PDF receipt.
 ...               Creates ZIP archive of the receipts and the images.
 Library           RPA.Archive
+Library    RPA.Dialogs
 Library    RPA.Browser.Selenium    auto_close=${FALSE}
 Library    RPA.HTTP
 Library    RPA.Tables
 Library    RPA.PDF
+Library    RPA.Robocorp.Vault
 
 
 *** Variables ***
@@ -19,9 +21,10 @@ ${PDF_OUTPUT_DIRECTORY}=    ${OUTPUT_DIR}${/}receipts
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
     Open the robot order website
-    ${orders}=    Get orders from csv file
+    ${url}=    Input form dialog
+    ${orders}=    Get orders from csv file    ${url}
     FOR    ${row}    IN    @{orders}
-        LOG    Show order number in row: ${row}[Order number]
+        # LOG    Show order number in row: ${row}[Order number]
         Close the annoying modal
         Fill the form    ${row}
         Preview the robot
@@ -32,13 +35,17 @@ Order robots from RobotSpareBin Industries Inc
         Go to order another robot
     END
     Create a ZIP file of the receipts
+    [Teardown]    Close Browser
 
 *** Keywords ***
 Open the robot order website
-    Open Available Browser    https://robotsparebinindustries.com/#/robot-order
+    ${secret}=    Get Secret    robotwebsiteurlforcert2
+    Open Available Browser    ${secret}[url]
 
 Get orders from csv file
-    Download    https://robotsparebinindustries.com/orders.csv    overwrite=True    target_file=downloads/orders.csv
+    [Arguments]    ${url}
+    # https://robotsparebinindustries.com/orders.csv
+    Download     ${url}   overwrite=True    target_file=downloads/orders.csv
     ${table}=    Read table from CSV    downloads/orders.csv
     [Return]    ${table}
 
@@ -98,3 +105,15 @@ Create a ZIP file of the receipts
     Archive Folder With Zip
     ...    ${PDF_OUTPUT_DIRECTORY}
     ...    ${zip_file_name}
+
+Input form dialog
+    Add heading    Which CSV?
+    Add text input    url    label=The url to download the csv file:"https://robotsparebinindustries.com/orders.csv"    placeholder=https://robotsparebinindustries.com/orders.csv
+    ${result}=    Run dialog
+    [Return]    ${result.url}
+
+Success dialog
+    Add icon    Success
+    Add heading    Your orders have been processed
+    Add files    *.zip
+    Run dialog    title=Success
