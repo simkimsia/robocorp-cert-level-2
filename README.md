@@ -105,14 +105,22 @@ Store Receipt as PDF
 ### Step 14: Take screenshot of robot preview image
 
 - Canonical url: https://robocorp.com/docs/courses/build-a-robot#16-take-a-screenshot-of-the-robot-image
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/2e69f59d37ba5fab18272b42a49b02abc535c6c5
 
 ### Step 15: Embed screenshot to pdf
 
 - Canonical url: https://robocorp.com/docs/courses/build-a-robot#17-embed-the-robot-screenshot-to-the-receipt-pdf-file
-
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/2e69f59d37ba5fab18272b42a49b02abc535c6c5
 ### Step 16: Order another robot
 
 Order another robot
 
 - Canonical url: https://robocorp.com/docs/courses/build-a-robot#18-go-to-order-another-robot
 - Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/03544ca6397f748d81445898894d548c7d7852e8
+
+### Step 17: Create zip file
+
+Create a zip file
+
+- Canonical url: https://robocorp.com/docs/courses/build-a-robot#19-create-a-zip-file-of-the-receipts
+- Canonical commit: https://github.com/simkimsia/robocorp-cert-level-2/commit/2e69f59d37ba5fab18272b42a49b02abc535c6c5
