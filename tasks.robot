@@ -4,6 +4,7 @@ Documentation     Orders robots from RobotSpareBin Industries Inc.
 ...               Saves the screenshot of the ordered robot.
 ...               Embeds the screenshot of the robot to the PDF receipt.
 ...               Creates ZIP archive of the receipts and the images.
+Library           RPA.Archive
 Library    RPA.Browser.Selenium    auto_close=${FALSE}
 Library    RPA.HTTP
 Library    RPA.Tables
@@ -11,8 +12,9 @@ Library    RPA.PDF
 
 
 *** Variables ***
-${GLOBAL_RETRY_AMOUNT}=    10x
-${GLOBAL_RETRY_INTERVAL}=    0.5s
+${GLOBAL_RETRY_AMOUNT}=    20x
+${GLOBAL_RETRY_INTERVAL}=    1s
+${PDF_OUTPUT_DIRECTORY}=    ${OUTPUT_DIR}${/}receipts
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
@@ -25,11 +27,11 @@ Order robots from RobotSpareBin Industries Inc
         Preview the robot
         Submit the order
         ${pdf}=    Store the receipt as a PDF file    ${row}[Order number]
-        # ${screenshot}=    Take a screenshot of the robot    ${row}[Order number]
-        # Embed the robot screenshot to the receipt PDF file    ${screenshot}    ${pdf}
+        ${screenshot}=    Take a screenshot of the robot    ${row}[Order number]
+        Embed the robot screenshot to the receipt PDF file    ${screenshot}    ${pdf}
         Go to order another robot
     END
-    # Create a ZIP file of the receipts
+    Create a ZIP file of the receipts
 
 *** Keywords ***
 Open the robot order website
@@ -71,5 +73,28 @@ Store the receipt as a PDF file
     Html To Pdf    ${receipt_html}    ${path_to_pdf}
     [Return]    ${path_to_pdf}
 
+Take a screenshot of the robot
+    [Arguments]    ${order_number}
+    Wait Until Element Is Visible    id:robot-preview-image
+    Wait Until Element Is Visible    //div[@id="robot-preview-image"]//img[@alt="Head"]
+    Wait Until Element Is Visible    //div[@id="robot-preview-image"]//img[@alt="Body"]
+    Wait Until Element Is Visible    //div[@id="robot-preview-image"]//img[@alt="Legs"]
+    ${path_to_png}=    Set Variable    ${OUTPUT_DIR}${/}previews${/}${order_number}.png
+    Screenshot    id:robot-preview-image    ${path_to_png}
+    [Return]    ${path_to_png}
+
+Embed the robot screenshot to the receipt PDF file
+    [Arguments]    ${path_to_screenshot}    ${path_to_pdf}
+    ${files}=    Create List
+    ...    ${path_to_screenshot}
+    ${append}=    Set Variable    True
+    Add Files To PDF    ${files}    ${path_to_pdf}    ${append}
+
 Go to order another robot
     Click Button When Visible    id:order-another
+
+Create a ZIP file of the receipts
+    ${zip_file_name}=    Set Variable    ${OUTPUT_DIR}${/}PDFs.zip
+    Archive Folder With Zip
+    ...    ${PDF_OUTPUT_DIRECTORY}
+    ...    ${zip_file_name}
