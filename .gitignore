@@ -23,6 +23,3 @@ downloads/*.csv
 # other output related xml files
 output.xml
 *_freeze.yaml
-
-# ignore vault.json
-vault.json
